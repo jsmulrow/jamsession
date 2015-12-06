@@ -10,13 +10,12 @@ module.exports = function(server) {
 
     io = socketio(server);
 
-    // main namespace
-    setupRoom(io, 'main');
+    // useful link for dynamic namespaces: http://stackoverflow.com/questions/26400595/socket-io-how-do-i-remove-a-namespace
+
+    // main namespace (took it out for now)
+    // setupRoom(io, 'main');
 
     // other namespaces
-    var jack = io.of('/jack');
-    setupRoom(jack, 'jack');
-
     var one = io.of('/room-one');
     setupRoom(one, 'one');
 
@@ -29,7 +28,8 @@ module.exports = function(server) {
     function setupRoom(io, name) {
         // local memory for each room
         var instruments = {};
-        var maxInstruments = 4;
+        var maxInstruments = 5;
+        var capacity = 0;
 
         io.on('connection', function(socket) {
 
@@ -41,13 +41,14 @@ module.exports = function(server) {
             // log disconnection messages
             socket.on('disconnect', function() {
                 console.log('A client has disconnected ', socketId);
+                // don't reduce capacity if the socket was not connected, also don't go below 0
+                if (capacity > 0 && _.has(instruments, socketId)) capacity -= 1;
                 delete instruments[socketId];
             });
 
             socket.on('addToRoom', function(config) {
                 console.log('got a new instrument', config);
-                var len = instruments.length;
-                if (len >= maxInstruments) {
+                if (capacity >= maxInstruments) {
                     // too many instruments in the room
                     socket.emit('fullRoom');
                 } else {
@@ -58,11 +59,12 @@ module.exports = function(server) {
                     socket.emit('enteredRoom', _.omit(instruments, id), id);
                     // alert other clients about the new instrument
                     socket.broadcast.emit('newInstrument', config, id);
+                    capacity += 1;
+                    console.log("old capacity: ", capacity - 1, "new capacity", capacity);
                 }
             });
 
             socket.on('keydown', function(note, frequency, id) {
-                console.log("instrument", id, "played a note");
                 // I think I will need an id for which piano
                 socket.broadcast.emit('keydown', note, frequency, id);
             });
