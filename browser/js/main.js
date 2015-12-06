@@ -2,6 +2,15 @@
 var socket = io(window.location.href); // href allows for namespaces
 console.log('connected socketio');
 
+var pathName = window.location.pathname;
+
+// update html if in a room
+if (pathName !== "/") {
+    $("#room-name").text(pathName.slice(1).replace("-", " "));
+    $("li.active").toggleClass("active");
+    $("li.dropdown").toggleClass("active");
+}
+
 socket.on('connect', function() {
     console.log('browser connected to server (i.e. node)');
 });
