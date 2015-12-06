@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/" />
+    <title>Jam Session</title>
+    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <script src="/lodash/index.js"></script>
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="/angular/angular.js"></script>
+    <script src="/angular-animate/angular-animate.js"></script>
+    <script src="/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/angular-ui-bootstrap/ui-bootstrap.js"></script>
+    <script src="/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script> -->
+    <script src="/socket.io-client/socket.io.js"></script>
+    <script src="/band-js/band.min.js"></script>
+    <script src="/qwerty-hancock/qwerty-hancock.min.js"></script>
+    <script src="/sockets.js"></script>
+    <!-- <script src="/main.js"></script> -->
+</head>
+<!-- <body ng-app="JamSessionApp"> -->
+<body>
+
+    <!-- info and stuff -->
+    <div class="container info">
+      <div class="page-header">
+        <h1>Jam Session <small>by Jack Mulrow</small></h1>
+      </div>
+      <div class="row">
+
+        <div class="col-xs-12">
+          <ul class="nav nav-tabs nav-justified">
+            <li role="presentation" class="active"><a href="/">Home</a></li>
+            <li role="presentation"><a href="/about">About</a></li>
+            <li role="presentation"><a href="/profile">Profile</a></li>
+            <li role="presentation" class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Sound Rooms <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/room-one">Room 1</a></li>
+                <li><a href="/room-two">Room 2</a></li>
+                <li><a href="/room-three">Room 3</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Make a new room</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- <div class="col-sm-12">
+          <h3>Information on how to use the app</h3>
+        </div> -->
+        <div class="col-sm-6">
+          <h3>Customization</h3>
+          <form id="options" class="form-inline">
+            <div class="form-group">
+              <label for="oscillator-type">Oscillator Type</label>
+              <select class="form-control" id="oscillator-type" name="oscillator-type">
+                <option value="square">Square</option>
+                <option value="sine">Sine</option>
+                <option value="sawtooth">Sawtooth</option>
+                <option value="triangle">Triangle</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="gain-val">Volume</label>
+              <select class="form-control" id="gain-val" name="gain-val">
+                <option value="0">0</option>
+                <option value="0.1">0.1</option>
+                <option value="0.2">0.2</option>
+                <option value="0.3">0.3</option>
+                <option value="0.4">0.4</option>
+                <option value="0.5">0.5</option>
+                <option value="0.6">0.6</option>
+                <option value="0.7">0.7</option>
+                <option value="0.8">0.8</option>
+                <option value="0.9">0.9</option>
+                <option value="1">1</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-default">Save</button>
+          </form>
+        </div>
+        <div class="col-sm-6">
+          <h3>Other info on how to use the app</h3>
+        </div>
+
+      </div>
+    </div>
+  
+    <!-- the keyboard -->
+    <div style="margin: 25px">
+      <div id="keyboard"></div>
+    </div>
+
+    <!-- <footer>
+      Some copyright info or perhaps some author info for an &lt;article&gt;?
+    </footer> -->
+
+</body>
+<!-- <script src="/band.js"></script> -->
+<!-- <script src="/instruments.js"></script> -->
+<script src="/qwerty.js"></script>
+</html>

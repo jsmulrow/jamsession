@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/" />
+    <title>Jam Session</title>
+    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <script src="/lodash/index.js"></script>
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/socket.io-client/socket.io.js"></script>
+    <script src="/band-js/band.min.js"></script>
+    <script src="/qwerty-hancock/qwerty-hancock.min.js"></script>
+    <script src="/sockets.js"></script>
+</head>
+<body>
+
+    <!-- info and stuff -->
+    <div class="container info">
+      <div class="page-header">
+        <h1>Jam Session <small>by Jack Mulrow</small></h1>
+      </div>
+      <div class="row">
+
+        <div class="col-xs-12">
+          <ul class="nav nav-tabs nav-justified">
+            <li role="presentation"><a href="/">Home</a></li>
+            <li role="presentation" class="active"><a href="/about">About</a></li>
+            <li role="presentation"><a href="/profile">Profile</a></li>
+            <li role="presentation" class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Sound Rooms <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/room-one">Room 1</a></li>
+                <li><a href="/room-two">Room 2</a></li>
+                <li><a href="/room-three">Room 3</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Make a new room</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>
+        Some info about my app
+      </h2>
+
+    </div>
+
+
+</body>
+<!-- <script src="/band.js"></script> -->
+<!-- <script src="/instruments.js"></script> -->
+<script src="/qwerty.js"></script>
+</html>
