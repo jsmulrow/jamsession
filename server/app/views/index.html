@@ -9,7 +9,6 @@
     <script src="/jquery/dist/jquery.min.js"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/socket.io-client/socket.io.js"></script>
-    <!-- <script src="/band-js/band.min.js"></script> -->
     <script src="/qwerty-hancock/qwerty-hancock.min.js"></script>
 </head>
 <body>
@@ -28,20 +27,28 @@
             <li role="presentation"><a href="/profile">Profile</a></li>
             <li role="presentation" class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Sound Rooms <span class="caret"></span>
+                <span id="room-name">Sound Rooms</span> 
+                <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
                 <li><a href="/room-one">Room 1</a></li>
                 <li><a href="/room-two">Room 2</a></li>
                 <li><a href="/room-three">Room 3</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Make a new room</a></li>
+                <li><a href="#">Make a new room (doesn't work yet)</a></li>
               </ul>
             </li>
           </ul>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-8">
+          <h3>How to use Jam Session</h3>
+          <p>
+            Use your mouse or keyboard to press the "keys" below to make sounds. Change the volume and kind of sounds using the interface to the right (click "save" for changes to go through). Play with other people by going to a "sound room" where you can jam with up to 4 other users. If you want to play by yourself, stay on the homepage.
+          </p>
+        </div>
+
+        <div class="col-sm-4">
           <h3>Customization</h3>
           <form id="options" class="form-inline">
             <div class="form-group">
@@ -72,9 +79,7 @@
             <button type="submit" class="btn btn-default">Save</button>
           </form>
         </div>
-        <div class="col-sm-6">
-          <h3>Other info on how to use the app</h3>
-        </div>
+        
 
       </div>
     </div>
