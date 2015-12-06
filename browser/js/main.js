@@ -208,4 +208,5 @@ socket.on("enteredRoom", function(oldInstruments, assignedId) {
 // failure script
 socket.on("fullRoom", function() {
     console.log('the room was full, can still jam locally');
+    $("#error-message").toggleClass("hidden");
 });
