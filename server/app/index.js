@@ -8,18 +8,6 @@ module.exports = app;
 // function located at server/app/configure/index.js
 require('./configure')(app);
 
-app.get('/about', function(req, res, next) {
-	console.log(path.join(__dirname, 'views/about.html'));
-	res.sendFile(path.join(__dirname, 'views/about.html'));
-});
-
-// Routes that will be accessed via AJAX should be prepended with
-// /api so they are isolated from our GET /* wildcard.
-app.use('/api', require('./api'));
-
-app.use('/rooms', require('./rooms'));
-
-
 /*
  This middleware will catch any URLs resembling a file extension
  for example: .js, .html, .css
