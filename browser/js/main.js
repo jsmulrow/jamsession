@@ -3,7 +3,6 @@
 
     // attach sockets
     var socket = io(window.location.href); // href allows for namespaces
-    console.log('connected socketio');
 
     var pathName = window.location.pathname;
 
@@ -117,7 +116,6 @@
 
     // finish setting up socket if connected successfully
     socket.on("enteredRoom", function(oldInstruments, assignedId) {
-        console.log('entered the room, assigned id:', assignedId);
         id = assignedId;
 
         var instruments = {};
