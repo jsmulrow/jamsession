@@ -4,15 +4,6 @@
 
 body {
   background: #fdfdfd;
-  // background: black;
-}
-
-@mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
 }
 
 #main {

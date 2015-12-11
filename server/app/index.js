@@ -7,11 +7,10 @@ module.exports = app;
 
 // middleware to serve static files
 var root = path.join(__dirname, '../..');
-app.use(favicon(path.join(root, '/server/app/views/favicon.ico')));
 app.use(express.static(path.join(root, './node_modules')));
-app.use(express.static(path.join(root, './public')));
 app.use(express.static(path.join(root, './browser')));
 app.use(express.static(path.join(root, './dist')));
+app.use(favicon(path.join(root, '/server/app/views/favicon.ico')));
 
 // send the index file for all requests
 var indexPath = path.join(__dirname, './views/index.html');
