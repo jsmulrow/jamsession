@@ -210,3 +210,51 @@ socket.on("fullRoom", function() {
     console.log('the room was full, can still jam locally');
     $("#error-message").toggleClass("hidden");
 });
+
+
+///// showing codes on the keys
+
+var blackButtons = ["2", "W", "E", "T", "Y", "U", "O", "P", "]"];
+// var blackNotes = $("[data-note-type='black']");
+var blackNotes = Array.prototype.slice.call(document.querySelectorAll("[data-note-type='black']"));
+// dynamically set the style for the notes
+var blackNoteStyle = {
+    "padding": parseInt(blackNotes[0].style.width) / 3 + "px",
+    "margin-top": parseInt(blackNotes[0].style.height) / 10 + "px",
+    "font-size": parseInt(blackNotes[0].style.width) / 2 + "px"
+}
+blackNotes.forEach(function(elem, idx) {
+    // make element and style it
+    var note = document.createElement("span");
+    note.innerHTML = blackButtons[idx];
+    note.id = 'black-note';
+    note.style.padding = blackNoteStyle.padding;
+    note.style["margin-top"] = blackNoteStyle["margin-top"];
+    note.style["font-size"] = blackNoteStyle["font-size"];
+    // attach element to DOM
+    elem.appendChild(note);
+});
+
+var whiteButtons = ["1", "3", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "\\"];
+var whiteNotes = Array.prototype.slice.call(document.querySelectorAll("[data-note-type='white']"));
+// dynamically set the style for the notes
+var whiteNoteStyle = {
+    "padding": (parseInt(whiteNotes[0].style.width) / 5) - 10 + (parseInt(whiteNotes[0].style.height) / 50) + "px",
+    "font-size": parseInt(whiteNotes[0].style.width) / 5 + "px",
+}
+whiteNoteStyle.margin = (parseInt(whiteNotes[0].style.width) - parseInt(whiteNoteStyle["font-size"]) - parseInt(whiteNoteStyle.padding)) / 2 + "px"; 
+whiteNoteStyle["margin-top"] = 2*parseInt(whiteNotes[0].style.height)/3 + parseInt(whiteNoteStyle["font-size"]) + "px",
+whiteNotes.forEach(function(elem, idx) {
+    // make element and style it
+    var note = document.createElement("span");
+    note.innerHTML = whiteButtons[idx];
+    note.id = 'white-note';
+    note.style.padding = whiteNoteStyle.padding;
+    // note.style.margin = whiteNoteStyle.margin;
+    note.style["margin-top"] = whiteNoteStyle["margin-top"];
+    // note.style["font-size"] = whiteNoteStyle["font-size"];
+    // attach element to DOM
+    elem.appendChild(note);
+});
+
+console.log("c4's style", document.getElementById("C4").style.height);

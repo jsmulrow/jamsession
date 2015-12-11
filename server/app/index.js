@@ -1,34 +1,25 @@
 'use strict';
 var path = require('path');
 var express = require('express');
+var favicon = require('serve-favicon');
 var app = express();
 module.exports = app;
 
-// Pass our express application pipeline into the configuration
-// function located at server/app/configure/index.js
-require('./configure')(app);
+// middleware to serve static files
+var root = path.join(__dirname, '../..');
+app.use(favicon(path.join(root, '/server/app/views/favicon.ico')));
+app.use(express.static(path.join(root, './node_modules')));
+app.use(express.static(path.join(root, './public')));
+app.use(express.static(path.join(root, './browser')));
+app.use(express.static(path.join(root, './dist')));
 
-/*
- This middleware will catch any URLs resembling a file extension
- for example: .js, .html, .css
- This allows for proper 404s instead of the wildcard '/*' catching
- URLs that bypass express.static because the given file does not exist.
- */
-app.use(function (req, res, next) {
-
-    if (path.extname(req.path).length > 0) {
-        res.status(404).end();
-    } else {
-        next(null);
-    }
-
-});
-
+// send the index file for all requests
+var indexPath = path.join(__dirname, './views/index.html');
 app.get('/*', function (req, res) {
-    res.sendFile(app.get('indexHTMLPath'));
+    res.sendFile(indexPath);
 });
 
-// Error catching endware.
+// Error catching
 app.use(function (err, req, res, next) {
     console.error(err, typeof next);
     res.status(err.status || 500).send(err.message || 'Internal server error.');
