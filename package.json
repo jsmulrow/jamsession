@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.4",
+    "chalk": "^1.1.1",
     "express": "^4.12.0",
     "gulp": "^3.8.11",
     "gulp-babel": "^5.1.0",
