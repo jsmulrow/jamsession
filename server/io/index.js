@@ -17,9 +17,6 @@ module.exports = function(server) {
         var capacity = 0;
 
         io.on('connection', function(socket) {
-
-            console.log('new client connected', socket.id);
-
             // unique string to identify each connected user
             var socketId = socket.id.slice(0,5);
 
@@ -28,6 +25,7 @@ module.exports = function(server) {
                 console.log('A client has disconnected ', socketId);
                 // don't reduce capacity if the socket was not connected, also don't go below 0
                 if (capacity > 0 && _.has(instruments, socketId)) capacity -= 1;
+                // remove the disconnected instrument from memory
                 delete instruments[socketId];
             });
 

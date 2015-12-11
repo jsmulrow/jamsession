@@ -181,14 +181,9 @@
 
         // set up a new audio context when a new instrument connects to the room
         socket.on('newInstrument', function(config, id) {
-            console.log('got a new instrument', config, id);
             setupInstrument(config, id);
         });
         socket.on('keydown', function(note, frequency, id) {
-
-            console.log("instrument", id, "played a note");
-            console.log("instruments", instruments);
-
             // access the correct instrument
             var instrument = instruments[id];
             instrument.playNote(note, frequency);
@@ -205,7 +200,7 @@
         });
     });
 
-    // failure script
+    // display an error message if the room is full
     socket.on("fullRoom", function() {
         document.getElementById("error-message").classList.toggle("hidden");
     });
