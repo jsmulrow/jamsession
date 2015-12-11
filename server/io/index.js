@@ -9,19 +9,7 @@ module.exports = function(server) {
 
     io = socketio(server);
 
-    // only enable sockets for sound-rooms, not the homepage
-    var one = io.of('/room-one');
-    setupRoom(one);
-
-    var two = io.of('/room-two');
-    setupRoom(two);
-
-    var three = io.of('/room-three');
-    setupRoom(three);
-
-    var four = io.of('/room-four');
-    setupRoom(four);
-
+    // encapsulates setting up the event listeners for a sound-room
     function setupRoom(io) {
         // local memory for each room
         var instruments = {};
@@ -80,7 +68,19 @@ module.exports = function(server) {
         });
 
     }
-    
-    return io;
 
+    // enable sockets for sound-rooms, not the homepage
+    var one = io.of('/room-one');
+    setupRoom(one);
+
+    var two = io.of('/room-two');
+    setupRoom(two);
+
+    var three = io.of('/room-three');
+    setupRoom(three);
+
+    var four = io.of('/room-four');
+    setupRoom(four);
+
+    return io;
 };
