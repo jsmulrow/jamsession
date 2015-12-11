@@ -14,10 +14,6 @@
         document.querySelector("li.dropdown").classList.toggle("active");
     }
 
-    socket.on('connect', function() {
-        console.log('browser connected to server (i.e. node)');
-    });
-
     window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
     // dynamically size the keyboard
@@ -206,14 +202,14 @@
     });
 
 
-    ///// showing codes on the keys
+    // put keyboard keys on the virtual piano
 
     var blackButtons = ["2", "W", "E", "T", "Y", "U", "O", "P", "]"];
     var blackNotes = Array.prototype.slice.call(document.querySelectorAll("[data-note-type='black']"));
     // dynamically set the style for the notes
     var blackNoteStyle = {
         "padding": parseInt(blackNotes[0].style.width) / 3 + "px",
-        "margin-top": parseInt(blackNotes[0].style.height) / 10 + "px",
+        "margin-top": (h/2) / 10 + "px",
         "font-size": parseInt(blackNotes[0].style.width) / 2 + "px"
     }
     blackNotes.forEach(function(elem, idx) {
@@ -221,9 +217,7 @@
         var note = document.createElement("span");
         note.innerHTML = blackButtons[idx];
         note.id = 'black-note';
-        note.style.padding = blackNoteStyle.padding;
-        note.style["margin-top"] = blackNoteStyle["margin-top"];
-        note.style["font-size"] = blackNoteStyle["font-size"];
+        Object.assign(note.style, blackNoteStyle);
         // attach element to DOM
         elem.appendChild(note);
     });
@@ -231,21 +225,18 @@
     var whiteButtons = ["1", "3", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "\\"];
     var whiteNotes = Array.prototype.slice.call(document.querySelectorAll("[data-note-type='white']"));
     // dynamically set the style for the notes
+    var whiteWidth = parseInt(whiteNotes[0].style.width);
+    var whiteHeight = parseInt(whiteNotes[0].style.height);
     var whiteNoteStyle = {
-        "padding": (parseInt(whiteNotes[0].style.width) / 5) - 10 + (parseInt(whiteNotes[0].style.height) / 50) + "px",
-        "font-size": parseInt(whiteNotes[0].style.width) / 5 + "px",
-    }
-    whiteNoteStyle.margin = (parseInt(whiteNotes[0].style.width) - parseInt(whiteNoteStyle["font-size"]) - parseInt(whiteNoteStyle.padding)) / 2 + "px"; 
-    whiteNoteStyle["margin-top"] = 2*parseInt(whiteNotes[0].style.height)/3 + parseInt(whiteNoteStyle["font-size"]) + "px",
+        "padding": (whiteWidth / 5) - 10 + (whiteHeight / 50) + "px",
+        "margin-top": (2 * whiteHeight) / 3 + (whiteWidth / 5) + "px"
+    };
     whiteNotes.forEach(function(elem, idx) {
         // make element and style it
         var note = document.createElement("span");
         note.innerHTML = whiteButtons[idx];
         note.id = 'white-note';
-        note.style.padding = whiteNoteStyle.padding;
-        // note.style.margin = whiteNoteStyle.margin;
-        note.style["margin-top"] = whiteNoteStyle["margin-top"];
-        // note.style["font-size"] = whiteNoteStyle["font-size"];
+        Object.assign(note.style, whiteNoteStyle);
         // attach element to DOM
         elem.appendChild(note);
     });
