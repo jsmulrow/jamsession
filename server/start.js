@@ -1,6 +1,4 @@
 'use strict';
-var chalk = require('chalk');
-
 // create the server
 var server = require('http').createServer();
 
@@ -13,5 +11,5 @@ require('./io')(server);   // Attach socket.io.
 var PORT = process.env.PORT || 8080;
 
 server.listen(PORT, function () {
-    console.log(chalk.blue('Server started on port', chalk.magenta(PORT)));
+    console.log('Server started on port', PORT);
 });
