@@ -2,9 +2,9 @@
   "name": "JamSession",
   "version": "1.0.0",
   "description": "Website to play synthetic instruments with other users in real time ",
-  "main": "server/main.js",
+  "main": "server/start.js",
   "scripts": {
-    "start": "nodemon --watch server -e js,html server/main.js",
+    "start": "nodemon --watch server -e js,html server/start.js",
     "postinstall": "gulp build"
   },
   "engines": {
