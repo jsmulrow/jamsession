@@ -18,9 +18,7 @@ body {
 }
 
 #black-note {
-    font-size: 1.5rem;
     display: inline-block;
-    margin-top: 0.8rem;
     color: white;
     text-align: center;
 }
@@ -28,17 +26,6 @@ body {
 #white-note {
     font-size: 4rem;
     display: inline-block;
-    padding: 1rem;
     margin: 1.4rem;
     color: black;
-}
-
-#white-key {
-    font-size: 1.5rem;
-    display: inline-block;
-    padding: 1rem;
-    margin: 1rem;
-    margin-top: 22rem;
-    background: #ccc;
-    border-radius: 0.4rem;
 }
