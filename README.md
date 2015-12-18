@@ -4,10 +4,9 @@
 
 ## Documentation
 
-Youtube Walkthrough: <a href="https://youtu.be/FdsIP_ZDvqI">https://youtu.be/FdsIP_ZDvqI</a>
-
 ### What is Jam Session -
 My project is a website that lets users play a synthetic keyboard with other users in real-time. 
+Youtube Walkthrough: <a href="https://youtu.be/FdsIP_ZDvqI">https://youtu.be/FdsIP_ZDvqI</a>
 
 ### How to use Jam Session -
 You can play the keyboard by clicking keys on the keyboard or the keys listed. To play with up to 4 other users, users must enter a "sound-room" by selecting one from the dropdown button near the top of the page. Every user inside a particular sound room will hear all the notes played by other users in that same sound-room. Users can only play by themselves on the home page. There is a small menu that allows users to customize the sounds their synthetic keyboard produces. They can select the type of oscillator used to generate sounds (square, sine, sawtooth, or triangle) and can select a volume from 0 to 1.0. Changes are only processed when the "save" button is clicked. If a room already has 5 users playing in it, new users going to that room will be unable to join, but can still play by themselves in that room.
