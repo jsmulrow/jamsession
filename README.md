@@ -1,5 +1,4 @@
 # Jam Session: <a href="http://jam-session-app.herokuapp.com/">http://jam-session-app.herokuapp.com/</a>
-## CS50 Final Project
 
 Youtube Walkthrough: <a href="https://youtu.be/FdsIP_ZDvqI">https://youtu.be/FdsIP_ZDvqI</a>
 
