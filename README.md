@@ -1,9 +1,7 @@
-# CS50 Final Project: Jam Session 
-## by Jack Mulrow
+# Jam Session: <a href="http://jam-session-app.herokuapp.com/">http://jam-session-app.herokuapp.com/</a>
+## CS50 Final Project
 
-Website URL: <a href="http://jam-session-app.herokuapp.com/">http://jam-session-app.herokuapp.com/</a>
-
-Youtube Video URL: <a href="https://youtu.be/FdsIP_ZDvqI">https://youtu.be/FdsIP_ZDvqI</a>
+Youtube Walkthrough: <a href="https://youtu.be/FdsIP_ZDvqI">https://youtu.be/FdsIP_ZDvqI</a>
 
 ## Documentation
 
