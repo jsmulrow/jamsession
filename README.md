@@ -2,9 +2,9 @@
 
 > Play electronic music with your friends in real-time
 
-Youtube Walkthrough: <a href="https://youtu.be/FdsIP_ZDvqI">https://youtu.be/FdsIP_ZDvqI</a>
-
 ## Documentation
+
+Youtube Walkthrough: <a href="https://youtu.be/FdsIP_ZDvqI">https://youtu.be/FdsIP_ZDvqI</a>
 
 ### What is Jam Session -
 My project is a website that lets users play a synthetic keyboard with other users in real-time. 
