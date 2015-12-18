@@ -1,5 +1,7 @@
 # Jam Session: <a href="http://jam-session-app.herokuapp.com/">http://jam-session-app.herokuapp.com/</a>
 
+> Play electronic music with your friends in real-time
+
 Youtube Walkthrough: <a href="https://youtu.be/FdsIP_ZDvqI">https://youtu.be/FdsIP_ZDvqI</a>
 
 ## Documentation
